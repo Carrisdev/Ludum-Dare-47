@@ -19,3 +19,17 @@
   * something happening at different speeds
   * - screen shaking to signify getting faster?
   */
+
+  //assets that need creating6
+  /* asteroids 
+   * the ship (done)
+   * background (done)
+   * shooting
+   * music
+   * sound effects
+   * 
+   */
+
+   //asteroid spawning
+   //point slightly farther along the circle
+   //spawn asteroids to a random value for x and y around the point to a certain amount
