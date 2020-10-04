@@ -9,9 +9,11 @@ public class asteroidSpawning : MonoBehaviour
     float variableX;
     float variableY;
     int numberSpawned;
-    int spawnrate;
-    int counter;
-    // Start is called before the first frame update
+    public int spawnrate;
+    public int counter;
+    GameManager gameManager;
+    
+
     void Start()
     {
         variableX = 20.0f;
@@ -19,12 +21,16 @@ public class asteroidSpawning : MonoBehaviour
         numberSpawned = 10;
         spawnrate = 500;
         counter = spawnrate;
+        gameManager = FindObjectOfType<GameManager>();
     }
-    // Update is called once per frame
+    
+
     void Update()
     {
+        //if the counter hits the spawnrate
         if(counter == spawnrate)
         {
+            //spawn a number of asteroids in a random place within certain bounds
             for(int i = 0; i < numberSpawned; i++)
             {
                 Vector2 randomPosition = new Vector2(Random.Range(-variableX, variableX), Random.Range(-variableY, variableY));
@@ -33,7 +39,11 @@ public class asteroidSpawning : MonoBehaviour
             }
             counter = 0;
         }
-        counter++;
+        //only update the counter while the player is playing the game
+        if(gameManager.state == GameManager.State.playing)
+        {
+            counter++;
+        }
     }
 
     public void increaseSpawnrate(int increase)

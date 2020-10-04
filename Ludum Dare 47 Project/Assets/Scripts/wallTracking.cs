@@ -6,15 +6,14 @@ public class wallTracking : MonoBehaviour
 {
     [SerializeField]
     Camera mainCamera;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //keep the walls in line with the camera
         transform.position = new Vector3(mainCamera.transform.position.x-0.77f, mainCamera.transform.position.y-1.34f, -10);
     }
 }

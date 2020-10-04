@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class spinCamera : MonoBehaviour
 {
-    float angle;
+    public float angle;
     float radius;
     float speed;
-    // Start is called before the first frame update
+    GameManager gameManager;
+    
     void Start()
     {
-        if(gameObject.name == "Main Camera")
+        //check which object this script is attached to and adjust the starting angle as appropriate
+        if (gameObject.name == "Main Camera")
         {
             angle = 0.0f;
         } else if(gameObject.name == "KillScreen")
         {
-            angle = 0.20f;
+            angle = 1.00f;
         } else if(gameObject.name == "SpawnPoint")
         {
-            angle = -0.15f;
+            angle = -0.35f;
         }
         
-        radius = 300.0f;
+        //set the radius of the spin and initial speed
+        radius = 100.0f;
         speed = 0.0001f;
-    }
+        gameManager = FindObjectOfType<GameManager>();
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
+        //move the object onto the edge of the circle
         float x;
         float y;
         angle -= speed;
@@ -36,6 +37,21 @@ public class spinCamera : MonoBehaviour
         transform.position = new Vector3(x, y, -10.0f);
     }
 
+    //move the camera every physics update to keep in line with the ship moving to avoid stuttering
+    void FixedUpdate()
+    {
+        if(gameManager.state == GameManager.State.playing || gameManager.state == GameManager.State.dying)
+        {
+            float x;
+            float y;
+            angle -= speed;
+            x = Mathf.Cos(angle) * radius;
+            y = Mathf.Sin(angle) * radius;
+            transform.position = new Vector3(x, y, -10.0f);
+        }
+    }
+
+    //increase speed
     public void increaseSpeed(float increase)
     {
         speed += increase;

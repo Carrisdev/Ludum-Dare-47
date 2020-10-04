@@ -10,17 +10,20 @@ public class shootBullet : MonoBehaviour
     GameObject rightBlaster;
     [SerializeField]
     GameObject shot;
+    [SerializeField]
+    GameManager gameManager;
     bool shootRight;
-    // Start is called before the first frame update
+    
     void Start()
     {
         shootRight = false;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        if(Input.GetMouseButtonDown(1))
+        //shoot when the player presses right click, and alternate shooting between the left and right blaster
+        if(Input.GetMouseButtonDown(1) && gameManager.state == GameManager.State.playing)
         {
             if (shootRight)
             {

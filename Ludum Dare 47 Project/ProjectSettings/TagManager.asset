@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Bullet
   - Wall
+  - Score
+  - SoundManager
+  - GameManager
+  - Asteroid
   layers:
   - Default
   - TransparentFX

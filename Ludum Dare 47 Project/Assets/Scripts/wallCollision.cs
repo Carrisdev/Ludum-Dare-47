@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class wallCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if the player leaves the screen kill the player
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<moveScript>().exploded = true;
         }
     }
 }
