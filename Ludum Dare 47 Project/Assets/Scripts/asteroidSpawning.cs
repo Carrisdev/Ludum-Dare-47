@@ -20,7 +20,6 @@ public class asteroidSpawning : MonoBehaviour
         spawnrate = 500;
         counter = spawnrate;
     }
-    //+-20 +-20
     // Update is called once per frame
     void Update()
     {
@@ -30,10 +29,15 @@ public class asteroidSpawning : MonoBehaviour
             {
                 Vector2 randomPosition = new Vector2(Random.Range(-variableX, variableX), Random.Range(-variableY, variableY));
                 randomPosition += new Vector2(transform.position.x, transform.position.y);
-                Instantiate(asteroids[Random.Range(0, asteroids.Length)], new Vector3(randomPosition.x, randomPosition.y, 0), Quaternion.identity);
+                GameObject temp = Instantiate(asteroids[Random.Range(0, asteroids.Length)], new Vector3(randomPosition.x, randomPosition.y, 0), Quaternion.identity);
             }
             counter = 0;
         }
         counter++;
+    }
+
+    public void increaseSpawnrate(int increase)
+    {
+        spawnrate -= 10;
     }
 }

@@ -53,5 +53,4 @@ public class moveScript : MonoBehaviour
         yield return new WaitForEndOfFrame();
         transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
     }
-
 }

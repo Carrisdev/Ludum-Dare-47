@@ -6,6 +6,7 @@ public class spinCamera : MonoBehaviour
 {
     float angle;
     float radius;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +15,14 @@ public class spinCamera : MonoBehaviour
             angle = 0.0f;
         } else if(gameObject.name == "KillScreen")
         {
-            angle = 0.15f;
+            angle = 0.20f;
         } else if(gameObject.name == "SpawnPoint")
         {
-            angle = -0.05f;
+            angle = -0.15f;
         }
         
-        radius = 500.0f;
+        radius = 300.0f;
+        speed = 0.0001f;
     }
 
     // Update is called once per frame
@@ -28,9 +30,14 @@ public class spinCamera : MonoBehaviour
     {
         float x;
         float y;
-        angle -= 0.00005f;
+        angle -= speed;
         x = Mathf.Cos(angle) * radius;
         y = Mathf.Sin(angle) * radius;
         transform.position = new Vector3(x, y, -10.0f);
+    }
+
+    public void increaseSpeed(float increase)
+    {
+        speed += increase;
     }
 }

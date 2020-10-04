@@ -14,22 +14,18 @@
 
  
  //prototype improvements
- /* need a background to orientate urself
-  * camera needs a wider radius
-  * something happening at different speeds
-  * - screen shaking to signify getting faster?
+ /* need a background to orientate urself (done)
+  * camera needs a wider radius (done)
+  * something happening at different speeds 
+  * - screen shaking to signify getting faster? (meh)
   */
 
   //assets that need creating6
-  /* asteroids 
+  /* asteroids (done)
    * the ship (done)
    * background (done)
-   * shooting
-   * music
-   * sound effects
-   * 
+   * shooting (done)
+   * dust cloud 
+   * music 
+   * sound effects 
    */
-
-   //asteroid spawning
-   //point slightly farther along the circle
-   //spawn asteroids to a random value for x and y around the point to a certain amount

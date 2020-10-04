@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6404862163160232919}
   - component: {fileID: 8932215497595403575}
   - component: {fileID: 5847456872104327688}
+  - component: {fileID: 5464177187951065052}
+  - component: {fileID: 6694398372576398676}
   m_Layer: 0
   m_Name: asteroid08
   m_TagString: Untagged
@@ -133,3 +135,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e625dee7b066d4ead42a43bfbc2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5464177187951065052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717161568095328745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11fa40a15a477542842b0456a3f6bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &6694398372576398676
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717161568095328745}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 20
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
